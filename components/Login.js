@@ -9,9 +9,8 @@ export default class Login extends React.Component {
 
 	state = {
 		name: 'Alice',
-		email: 'abraeva.98@mai.ru',
-		password: '123456',
-		avatar: ''
+		email: 'abraeva.98@mail.ru',
+		password: '123456'
 	};
 
 	onPressLogin = async () => {
@@ -19,7 +18,6 @@ export default class Login extends React.Component {
 			name: this.state.name,
 			email: this.state.email,
 			password: this.state.password,
-			avatar: this.state.avatar
 		};
 
 		const response = firebaseSDK.login(
@@ -33,8 +31,7 @@ export default class Login extends React.Component {
 		console.log('login successful, navigate to chat.');
 		this.props.navigation.navigate('Chat', {
 			name: this.state.name,
-			email: this.state.email,
-			avatar: this.state.avatar
+			email: this.state.email
 		});
 	};
 
